@@ -37,7 +37,7 @@ export class ERC721Validator extends Model {
         reject('You must provide contract address as input');
       }
       try {
-        const validator = new (this.web3.eth as any).Contract(codes.ABI_BASIC);
+        const validator = (this.web3.eth as any).Contract(codes.ABI_BASIC);
 
         await validator
           .deploy({
